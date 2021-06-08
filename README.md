@@ -1,7 +1,7 @@
-Example 1
+Example 2
 =========
 
-This example shows a simple Flask application.
+This example shows how a Flask application can work with templates.
 
 Running the application
 -----------------------
@@ -12,6 +12,3 @@ To run this example follow these steps:
 - To start the application run the following command:
 
         (venv) $ python hello.py
-
-- Works fine with both Windows and Linux OS.
-
