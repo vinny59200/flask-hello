@@ -13,7 +13,7 @@ def hello():
 @app.route('/question/<idQuestion>')
 def user(idQuestion):
 	 return jsonify(
-        question="EN 1990, 4 PERSONNES SUR 10 VIVAIENT SOUS LE SEUIL DE PAUVRETÉ EXTRÊME. COMBIEN DE PERSONNES VIVENT ACTUELLEMENT SOUS CE SEUIL? A)1 sur 10 | B)3 sur 10 | C)5 sur 10",
+        question="EN 1990, 4 PERSONNES SUR 10 VIVAIENT SOUS LE SEUIL DE PAUVRETE EXTREME. COMBIEN DE PERSONNES VIVENT ACTUELLEMENT SOUS CE SEUIL? A)1 sur 10 | B)3 sur 10 | C)5 sur 10",
         answer="A",
         id="2"
     )
