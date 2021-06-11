@@ -38,7 +38,8 @@ def select(id):
     #create a cursor
     cursor = conn.cursor() 
     #execute select statement to fetch data to be displayed in combo/dropdown
-    cursor.execute('SELECT * FROM question WHERE id = 4') 
+    query_string = "SELECT * FROM question WHERE id = %s"
+    cursor.execute(query_string, (id,))
     #fetch all rows ans store as a set of tuples 
     joblist = cursor.fetchall() 
     #render template and send the set of tuples to the HTML file for displaying
