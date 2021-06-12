@@ -6,6 +6,7 @@ from flaskext.mysql import MySQL
 from flask import jsonify
 from random import randint
 import logging
+import json
 
 app = Flask(__name__)
 
@@ -101,9 +102,12 @@ def send():
     value = randint(2, 171)
     cursor.execute(query_string, (value,))
     # fetch all rows ans store as a set of tuples
-    nextQuestion = cursor.fetchone()
     # render template and send the set of tuples to the HTML file for displaying
-    return str(nextQuestion)
+    row_headers = [x[0] for x in cursor.description]  # this will extract row headers
+    rv = cursor.fetchone()
+    json_data = []
+    json_data.append(dict(zip(row_headers, rv)))
+    return json.dumps(json_data[0])
 
 
 if __name__ == "__main__":
